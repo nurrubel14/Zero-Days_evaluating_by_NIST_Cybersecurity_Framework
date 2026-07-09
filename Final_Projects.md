@@ -48,8 +48,12 @@ General Concepts and Preparation Strategies
 ●	Incident Response Planning: Practical steps for developing a response plan that accounts for unpatched vulnerabilities
 
 The preparation phase is often considered the most critical stage of incident response when dealing with zero-days scenarios. Because vulnerabilities in these scenarios are unknown and there are no available patches, the preparation phase focuses on building a resilient environment that can detect unusual behaviour and contain an attack even when the specific threat is unknown. Preparation is not about stopping a threat but to build a “house” that can survive a break-in through a hidden door.  It involves establishing the people, processes, and tools necessary to handle an emergency before it happens.
-Preparation Strategies
-Establish Governance & Risk Management 
+# Preparation Strategies
+## Establish Governance & Risk Management 
+
+<img width="499" height="246" alt="image" src="https://github.com/user-attachments/assets/5f94c064-b140-4192-8c69-a54136020764" />
+
+
 The Six Categories of the "Govern" Function
 NIST CSF 2.0 organizes the Govern function into six distinct categories that provide a roadmap for leadership: 
 
@@ -84,13 +88,13 @@ Risk Tolerance	Specific, measurable thresholds.	"Downtime for [System X] must no
 
 Governance requires defining exactly who is accountable for cybersecurity decisions. It ensures that security roles are clear across the entire organization, from the board level to individual contributors. 
 The primary goal of GV.RR is to establish clear accountability. Without defined roles and authorities, cybersecurity efforts often fail due to confusion, lack of budget, or "responsibility gaps" where critical security tasks fall through the cracks.
-The Core Components
+## The Core Components
 The category is structured to ensure that everyone from the Board of Directors to the system operators understands their contribution to the organization’s security posture.
 
 ## 4.	Policy (GV.PO): 
 This category focuses on creating and maintaining formal policies that reflect the organization’s cybersecurity goals, ensuring they are documented and understood. 
 
-## Subcategory
+Subcategory
 Focus	Key Objective
 GV.RR-01	Organizational Roles	Defining and communicating clear cybersecurity roles and responsibilities for all personnel.
 GV.RR-02	Organizational Authorities	Ensuring that personnel have the explicit authority to carry out their assigned cybersecurity responsibilities.
@@ -102,8 +106,8 @@ Policy translates the organization’s high-level Risk Appetite and Strategy int
 
 
 
-The Core Components
-The GV.PO category focuses on three essential elements of policy management
+##The Core Components
+The category is structured to ensure that everyone from the Board of Directors to the system operators understands their contribution to the organization’s security posture.
 
 Subcategory
 Focus	Core Objective
@@ -112,39 +116,43 @@ GV.PO-02	Communication	Ensuring that cybersecurity policies are disseminated and
 GV.PO-03	Review and Update	Periodically reviewing and updating policies to ensure they remain relevant to the evolving threat landscape and organizational changes.
 
 
-5.	Oversight (GV.OV): Governance involves continuous monitoring of the cybersecurity strategy. It ensures that the organization’s results are reviewed against its stated goals, providing the feedback loop necessary to adjust tactics. 
+# 5.	Oversight (GV.OV): 
+
+Governance involves continuous monitoring of the cybersecurity strategy. It ensures that the organization’s results are reviewed against its stated goals, providing the feedback loop necessary to adjust tactics. 
 Oversight transforms cybersecurity from a static set of rules into a dynamic, performance-driven program. It moves the needle from "asserting" that security is working to "demonstrating" it through evidence, metrics, and continuous review
-6.	Cybersecurity Supply Chain Risk Management (GV.SC): Recognizing that risks often exist outside the perimeter, this category focuses on governing the risks associated with third-party service providers, suppliers, and external partners., it focuses on the systematic process of identifying, assessing, and managing risks throughout the technology product and service lifecycle, specifically regarding third-party relationships (suppliers, vendors, partners).
+## 6.	Cybersecurity Supply Chain Risk Management (GV.SC):
+
+Recognizing that risks often exist outside the perimeter, this category focuses on governing the risks associated with third-party service providers, suppliers, and external partners., it focuses on the systematic process of identifying, assessing, and managing risks throughout the technology product and service lifecycle, specifically regarding third-party relationships (suppliers, vendors, partners).
 
 
-
-7.	
-
-
-
-
-
+<img width="499" height="270" alt="image" src="https://github.com/user-attachments/assets/46451954-9d31-414f-82f3-8892a83b0fdf" />
 
 
 
 
-Govern Function Application into Zero-Day Resilience 
+
+
+
+
+
+
+
 
  
 
 
 
 
-IDENTIFICATION PHASE
+# IDENTIFICATION PHASE
 If Govern sets the strategy and "rules of the road," Identify provides the map of the environment where those rules are applied. Its core purpose is to develop an organizational understanding of your cybersecurity risk, ensuring you know exactly what you are protecting and why.
-The Three Pillars of Identify
+## The Three Pillars of Identify
 While previous versions of the framework included more categories here, CSF 2.0 has streamlined Identify to focus on three essential areas
 Category	Focus	Core Objective
 Asset Management (ID.AM)	Inventory & Classification	Knowing what you have (hardware, software, data, systems, and services) and prioritizing it based on business value.
 Risk Assessment (ID.RA)	Threat & Vulnerability	Understanding the threats to those assets, the potential vulnerabilities, and the likelihood/impact of an incident.
 Improvement (ID.IM)	Continuous Growth	Learning from your risk management activities to refine your program over time.
 
-The Core Focus of ID.AM
+## The Core Focus of ID.AM
 The Identify function is the foundation for all subsequent actions (Govern, Protect, Detect, Respond, and Recover). ID.AM ensures that your cybersecurity strategy is based on accurate, real-time knowledge of your environment.
 Subcategory	Requirement	Objective
 ID.AM-01	Inventory of computing devices	Know exactly what hardware connects to your network.
@@ -154,16 +162,22 @@ ID.AM-04	Inventory of internal and external services	Identify dependencies on th
 ID.AM-05	Identification of logical and physical dependencies	Map how assets, services, and data interact to support business functions.
 ID.AM-06	Asset roles and responsibilities	Define who owns, manages, and is accountable for each asset.
 
+<img width="451" height="246" alt="image" src="https://github.com/user-attachments/assets/478dc207-aada-46da-81dd-a8916fb97202" />
+
+
  
 
-Integrating with Other Functions
+## Integrating with Other Functions
 Asset Management is not an isolated activity; it feeds the rest of the NIST framework:
-●	Govern: Your risk appetite and tolerance are applied to specific asset classes (e.g., higher tolerance for non-critical assets; zero tolerance for critical customer data repositories).
-●	Protect: You cannot apply the correct safeguards (e.g., MFA, encryption) without knowing the type and sensitivity of the asset.
-●	Recover: During a recovery, the priority is determined by the criticality levels established in the Asset Management phase.
+##●	Govern: 
+Your risk appetite and tolerance are applied to specific asset classes (e.g., higher tolerance for non-critical assets; zero tolerance for critical customer data repositories).
+## ●	Protect: 
+You cannot apply the correct safeguards (e.g., MFA, encryption) without knowing the type and sensitivity of the asset.
+## ●	Recover:
+During a recovery, the priority is determined by the criticality levels established in the Asset Management phase.
 
-            Risk Assessment (ID.RA)
-The Core Focus of ID.RA
+     #        Risk Assessment (ID.RA)
+# The Core Focus of ID.RA
 The primary goal of ID.RA is to move from a list of assets to an understanding of cybersecurity risk to operations, assets, and individuals. It translates technical data into business-relevant insights. 
 Subcategory	Focus	Key Activity
 ID.RA-01	Vulnerabilities	Identify, validate, and record weaknesses in assets.
@@ -177,17 +191,19 @@ ID.RA-08	Vulnerability Disclosure	Establish processes to handle external vulnera
 ID.RA-09	Acquisition Integrity	Verify hardware/software integrity before use.
 ID.RA-10	Supplier Assessment	Assess critical suppliers prior to engagement.
 
-The "Risk Triangle": AM, RA, and RM
+# The "Risk Triangle": AM, RA, and RM
 To implement ID.RA effectively, it must be tightly coupled with the other functions you’ve been focusing on:
 1.	ID.AM (Asset Management): Provides the "subject" of the assessment. You assess risks to the assets identified in your inventory. 
 2.	ID.RA (Risk Assessment): Provides the "verdict." It calculates the impact and likelihood of a threat exploiting a vulnerability on those assets. 
 3.	GV.RM (Risk Management Strategy): Provides the "threshold." Your Risk Tolerance (from the Govern function) is the benchmark used in ID.RA-06 to decide whether to Accept, Mitigate, Transfer, or Avoid the risk.
 
+<img width="486" height="284" alt="image" src="https://github.com/user-attachments/assets/0a214039-5f24-4084-ae76-cdffbf04b6c5" />
+
  
-Improvement (ID.IM)
+# Improvement (ID.IM)
 The primary outcome of ID.IM is the continuous refinement of the organization’s cybersecurity program. It transitions the organization from a static security model to one of continuous improvement, ensuring that past experiences (both internal successes/failures and external industry trends) are actively used to strengthen defenses.
 
-Key Subcategories of ID.IM
+# Key Subcategories of ID.IM
 The Improvement category focuses on formalizing the process of learning and adapting:
 ●	ID.IM-01: Improvement Planning: The organization communicates and implements improvements based on the results of previous activities and assessments. This ensures that findings from audits, exercises, and real-world incidents are not ignored but are turned into actionable projects.
 ●	ID.IM-02: Lessons Learned: The organization identifies and documents lessons learned from internal and external activities, including cybersecurity incidents, to improve the cybersecurity program.
@@ -218,8 +234,8 @@ o	Note: This is where the post-incident analysis from the Recover function feeds
 
 
 
-PROTECTION PHASE
-The 72-hrs Response Timeline
+# PROTECTION PHASE
+## The 72-hrs Response Timeline
 Phase	Timeframe	Objective	Key Actions
 1. Detect	Hour 0–6	Identify that an exploit exists	Correlate monitoring alerts, threat intelligence feeds, and vendor or CERT disclosures to confirm the vulnerability is real and relevant to your environment.
 2. Contain	Hour 6-24	Stop the bleeding	Isolate affected systems, cut off attacker access paths, and apply emergency compensating controls (firewall rules, account lockdowns) while a permanent fix is prepared.
@@ -227,7 +243,7 @@ Phase	Timeframe	Objective	Key Actions
 4. Verify	Hour 48–72	Confirm the incident is closed	Scan for residual compromise, confirm full patch coverage, restore normal operations, and update policy based on lessons learned.
 Why 72 Hours?
 Seventy-two hours is a deliberately tight but achievable target. It's long enough to properly test a patch before mass deployment, but short enough to keep urgency high and stop response efforts from drifting. Many regulatory breach-notification windows (for example, 72-hour rules under GDPR-aligned frameworks) also anchor to this timeframe, so the blueprint doubles as a structure for meeting external reporting obligations.
-Protection 
+# Protection 
 Vendors typically need time to develop, test, and release a fix once a zero-day is disclosed. During that gap, the organization is exposed but not defenseless. Five categories of controls reduce that exposure:
 ●	EDR & Antivirus: Endpoint Detection and Response (EDR) tools, paired with traditional antivirus, watch for the behavioral signatures of exploitation, like unusual process spawning, memory injection, privilege escalation (even when the specific exploit is unknown).
 ●	Firewalls, IDS & IPS: Firewalls, intrusion detection systems (IDS), and intrusion prevention systems (IPS) can be tuned with emergency signatures or rules as soon as indicators of compromise are published, blocking known exploit traffic at the perimeter.
@@ -259,7 +275,7 @@ Vendors typically need time to develop, test, and release a fix once a zero-day 
 
 
 
-DETECTION PHASE
+# DETECTION PHASE
 
 
 
@@ -289,7 +305,7 @@ DETECTION PHASE
 
 
 
-RESPONSE PHASE
+# RESPONSE PHASE
 
 
 
@@ -319,11 +335,11 @@ RESPONSE PHASE
 
 
 
-RECOVERY PHASE
+## RECOVERY PHASE
 When a cyberattack hits, recovery is the stage where an organization gets its systems and services working safely and normally. In our investigation we used the NIST Cybersecurity Framework (a widely used, free U.S. government playbook for managing cyber risk) approach. 
-What “Recovery” means
+# What “Recovery” means
 In the framework, Recovery (the RECOVER function) is simply this: restore the assets and operations that the incident affected. The goal is to bring things back to normal, safely and in good timing, while keeping people informed. It has two parts: getting systems back up (Incident Recovery Plan Execution, RC.RP) and keeping everyone informed (Incident Recovery Communication, RC.CO).
-The recovery steps, in order
+# The recovery steps, in order
 Recovery is a careful, verified sequence:
 1.	Execute the plan. Start the recovery plan you prepared in advance (Eg, Playbooks, Manuals, etc.).
 2.	Prioritize. Decide what to restore first, based on what matters most.
@@ -331,19 +347,21 @@ Recovery is a careful, verified sequence:
 4.	Restore and confirm. Restore the systems and confirm they are truly back to normal.
 5.	Set new norms. Set new, safer “normal” rules for operating after the incident.
 6.	Close it out. Officially declare recovery finished, but only when it meets agreed criteria and all the important points of the attack have been documented.
-The golden rule: trust, but verify. Check backups before you use them, and check restored systems afterward.
-Why a zero-day makes recovery harder
+## The golden rule: trust, but verify. Check backups before you use them, and check restored systems afterward.
+
+
+## Why a zero-day makes recovery harder
 A zero-day breaks three things we normally take for granted:
 ●	No fix exists yet. You might restore a system only to find it is still open to the same attack. Until the vendor releases a patch, you must add temporary protections (“compensating controls”).
 ●	Your backups might already be infected. Attackers often get in well before anyone notices, so even saved copies can hide their tools. That is why you verify backups first.
 ●	The attacker might survive the cleanup. Some malicious code can outlast a restart, or even a full factory reset.
-Real example: In 2025, for a set of zero-day flaws in Cisco security devices, the U.S. cyber agency CISA warned that rebooting was not enough and required a physical hard reset, because the malware had buried itself in the device's read-only memory. In the worst cases, “recovery” means rebuilding from scratch or even replacing hardware.
-Trusted tools that help
+## Real example: In 2025, for a set of zero-day flaws in Cisco security devices, the U.S. cyber agency CISA warned that rebooting was not enough and required a physical hard reset, because the malware had buried itself in the device's read-only memory. In the worst cases, “recovery” means rebuilding from scratch or even replacing hardware.
+## Trusted tools that help
 ●	MITRE D3FEND: Its “Restore” step describes how to return systems to a known-good state.
 ●	CVSS 4.0: Version 4 adds a “Recovery” label that flags whether a system can bounce back automatically, needs a person to fix it, or is beyond repair.
 ●	CISA: This U.S. Agency offers free help: an “Eviction Strategies” tool for removing attackers, a public list of vulnerabilities known to be under active attack (the KEV catalog), and emergency directives that set deadlines to act while no patch exists.
 ●	NIST SP 800-184: a dedicated guide on cyber-event recovery (how to plan it, practice it, and measure it).
-Communicate and confirm
+## Communicate and confirm
 Recovery isn't done until it is both verified and communicated. Keep people updated (customers, partners, regulators) and share public updates through approved channels. Declare “all clear” only when it meets agreed criteria. With a zero-day, whose full reach may be unknown, it is wise not to rush that call. Finally, turn the experience into lessons that strengthen future defenses.
 
 
