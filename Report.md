@@ -277,7 +277,35 @@ Vendors typically need time to develop, test, and release a fix once a zero-day 
 
 # DETECTION PHASE
 
+Purpose of the Detection Phase
 
+The Detect function of the NIST Cybersecurity Framework (CSF) 2.0 focuses on finding and analysing possible cybersecurity attacks in a timely manner. For a critical vulnerability or zero-day, detection cannot rely only on known signatures because the exploit may not yet have a patch or a published indicator of compromise. The objective is to identify abnormal activity early, validate whether it is malicious, and provide reliable information for containment and response.
+
+1. Establish a baseline of normal activity
+
+• Monitor normal authentication patterns, endpoint processes, network connections, DNS requests, application behaviour, and data transfers. Baselines help analysts recognise unusual activity such as a service spawning an unexpected shell, a privileged account logging in at an unusual time, a process injecting code into another process, or a server suddenly communicating with an unfamiliar external host.
+
+2. Collect and correlate security telemetry
+
+Centralise logs from endpoints, servers, identity providers, firewalls, IDS/IPS, DNS, VPNs, cloud platforms, and critical applications in a SIEM. Correlate events across sources rather than treating each alert in isolation. EDR telemetry can reveal suspicious process trees, while network monitoring can show command-and-control traffic or lateral movement. Ensure clocks are synchronised and logging is enabled on critical assets.
+
+3. Use behavioural detection and threat intelligence
+
+Use anomaly detection, endpoint behaviour analytics, network intrusion detection, and rules based on attacker techniques. Enrich alerts with current threat intelligence, indicators of compromise (IOCs), vulnerability advisories, CVE/CVSS information, and MITRE ATT&CK techniques where applicable. Intelligence can improve detection, but the absence of a known IOC does not prove that a system is safe.
+
+4. Triage and validate alerts
+
+• The SOC analyst reviews alert severity, affected assets, account privileges, event timelines, and supporting evidence. Determine whether the activity is a true positive, false positive, or requires further investigation. Prioritise alerts involving internet-facing systems, critical business services, privileged accounts, suspicious persistence, exploitation indicators, or unexpected outbound traffic. Preserve relevant logs and evidence before making changes that could destroy it.
+
+5. Confirm scope and escalate
+
+Identify potentially affected hosts, users, applications, data, and connected systems. Look for related activity across the environment and check whether the vulnerability is present on exposed assets. Escalate credible exploitation or unexplained high-impact behaviour to the incident-response lead immediately, following the organisation’s severity matrix and escalation path.
+
+Detection outputs
+
+Record the alert source, timestamps, affected assets, observed behaviour, relevant IOCs, vulnerability details, confidence level, severity, actions already taken, and recommended next steps. The detection record should support a clear decision about whether to declare an incident and begin response activities. Continue monitoring during containment to determine whether the attacker remains active.
+
+Key principle: for a zero-day, behaviour and context may provide the strongest early warning. Detection should be continuous, correlated across multiple data sources, and connected to a documented escalation process.
 
 
 
@@ -307,8 +335,39 @@ Vendors typically need time to develop, test, and release a fix once a zero-day 
 
 # RESPONSE PHASE
 
+Purpose of the Response Phase
 
+The Respond function of NIST CSF 2.0 coordinates action after a cybersecurity incident is detected. For a critical vulnerability or suspected zero-day, the priorities are to limit harm, understand the incident, remove unauthorised access, communicate with the right stakeholders, and reduce the chance of further exploitation. Response decisions should follow the organisation’s incident-response plan, risk tolerance, and established authority levels.
 
+1. Declare and coordinate the incident
+
+The incident lead validates the available evidence, assigns a severity level, activates the appropriate response team, and opens an incident record. Define responsibilities for SOC analysts, IT operations, vulnerability management, legal/privacy teams, communications, business owners, and external providers. Establish a secure communication channel in case normal email or collaboration systems are compromised.
+
+2. Contain the threat
+
+Limit the attacker’s ability to continue operating. Depending on the evidence and business impact, isolate affected endpoints, disable compromised accounts, revoke suspicious sessions and tokens, block malicious domains or IP addresses, restrict vulnerable services, and apply temporary firewall or access-control rules. For a zero-day without a patch, use compensating controls such as disabling the affected feature, restricting exposure, or placing the system behind additional filtering. Coordinate containment with system owners to avoid unnecessary disruption and preserve evidence where possible.
+
+3. Investigate the scope and impact
+
+Build a timeline from SIEM, EDR, identity, application, and network logs. Determine the likely initial access vector, affected systems and accounts, attacker actions, possible persistence, lateral movement, data access or exfiltration, and whether the vulnerability was exploited. Collect and protect forensic evidence, record decisions and timestamps, and update the incident hypothesis as new facts emerge. Do not assume that one affected host represents the full scope.
+
+4. Eradicate and remediate
+
+Remove identified malicious files, persistence mechanisms, unauthorised accounts, and attacker access. Apply a vendor patch when available and validated, or deploy a trusted workaround while waiting for a permanent fix. Test changes in a controlled environment when feasible, prioritise internet-facing and business-critical assets, and track remediation coverage. If compromise cannot be confidently removed, rebuild affected systems from trusted sources and rotate credentials or secrets that may have been exposed.
+
+5. Communicate and meet reporting obligations
+
+Provide timely, factual updates to leadership, IT teams, affected business owners, and other authorised stakeholders. Legal and privacy specialists should assess contractual, regulatory, and breach-notification obligations. Share indicators and technical details with vendors, service providers, or relevant authorities when appropriate and authorised. Keep communications consistent, document what is known and unknown, and avoid unsupported conclusions.
+
+6. Verify containment and hand over to recovery
+
+Confirm that suspicious activity has stopped, attacker access paths are blocked, and the immediate risk is controlled. Increase monitoring for repeated exploitation attempts and signs of persistence. Document outstanding risks, temporary controls, patch status, affected assets, and criteria for safe restoration. Hand these findings to the Recovery phase so systems are returned to service only after appropriate checks.
+
+Response evidence and success measures
+
+Maintain an incident timeline, decisions and approvals, evidence references, containment actions, communication records, remediation status, and unresolved risks. Review time to acknowledge, time to contain, time to remediate, and the scope of affected assets. After the incident, conduct a lessons-learned review and feed improvements into detection rules, playbooks, asset inventories, and risk assessments.
+
+Key principle: act quickly but deliberately. Containment reduces the blast radius; evidence-based investigation and verified remediation reduce the likelihood of recurrence.
 
 
 
